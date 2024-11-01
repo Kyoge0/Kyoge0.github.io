@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Buscaminas</h1>
+
+    <!-- Contenedor principal -->
+    <div id="main-container">
+        <!-- Panel de ajustes a la izquierda -->
+        <div id="settings">
+            <h2>Ajustes</h2>
+            
+            <!-- Menú desplegable personalizado de dificultad -->
+            <div class="select-menu" id="difficulty-menu">
+                <div class="select" onclick="toggleDropdown()">
+                    <span id="selected-difficulty">Seleccione dificultad</span>
+                    <span>&#9660;</span>
+                </div>
+                <div class="options-list">
+                    <div class="option" onclick="selectDifficulty('Fácil', '5x5_5')">Fácil (5x5, 5 minas)</div>
+                    <div class="option" onclick="selectDifficulty('Medio', '8x8_10')">Medio (8x8, 10 minas)</div>
+                    <div class="option" onclick="selectDifficulty('Difícil', '10x10_15')">Difícil (10x10, 15 minas)</div>
+                    <div class="option" onclick="selectDifficulty('Muy Difícil', '12x12_20')">Muy Difícil (12x12, 20 minas)</div>
+                    <div class="option" onclick="selectDifficulty('Hardcore', '15x15_30')">Hardcore (15x15, 30 minas)</div>
+                    <div class="option" onclick="selectDifficulty('Leyenda', '20x20_75')">Leyenda (20x20, 75 minas)</div>
+                    <div class="option" onclick="selectDifficulty('Personalizado', 'custom')">Personalizado</div>
+                </div>
+            </div>
+
+            <!-- Configuración personalizada -->
+            <div id="custom-settings" style="display: none;">
+                <label for="custom-rows">Filas:</label>
+                <input type="number" id="custom-rows" min="5" value="5">
+                <label for="custom-cols">Columnas:</label>
+                <input type="number" id="custom-cols" min="5" max="50" value="5">
+                <label for="custom-mines">Minas:</label>
+                <input type="number" id="custom-mines" min="1" value="5">
+            </div>
+
+            <button onclick="startGame()">Iniciar Juego</button>
+            <button onclick="resetGame()" id="reset-button">Reiniciar</button>
+        </div>
+
+        <!-- Tablero de juego a la derecha -->
+        <div id="game">
+            <div id="message"></div>
+            <div id="grid" class="grid"></div>
+        </div>
+    </div>
+
+    <!-- Panel de Highscores -->
+    <div id="scores">
+        <h2>Mejores Tiempos</h2>
+        <ul id="highScores"></ul>
+    </div>
+
+    <script src="Script.js"></script>
+</body>
+</html>

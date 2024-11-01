@@ -1,0 +1,242 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #282828; /* Fondo gris oscuro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centrar título */
+h1 {
+  margin-top: 20px;
+  font-size: 2.5rem;
+  color: #ffd700;
+  text-align: center;
+}
+
+/* Contenedor principal para el panel de ajustes y el tablero */
+#main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* Panel de ajustes */
+#settings {
+  background-color: #201e1e;
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+  width: 220px;
+  text-align: left;
+  color: #fff;
+}
+
+#settings h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffd700;
+}
+
+/* Dropdown personalizado */
+.select-menu {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.select {
+  background-color: #333;
+  padding: 12px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.select:hover {
+  background-color: #444;
+}
+
+.options-list {
+  position: absolute;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  margin-top: 10px;
+  padding: 0 20px;
+  max-height: 180px;
+  overflow-y: auto;
+  transition: .4s linear .2s;
+  height: 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.option {
+  padding: 10px 0;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+  transition: .3s ease-in-out;
+}
+
+.option:hover,
+.option.selected {
+  color: #00a8ff;
+}
+
+.options-list.active {
+  height: 180px;
+}
+
+.options-list::-webkit-scrollbar {
+  width: 6px;
+  background-color: #eee;
+}
+
+.options-list::-webkit-scrollbar-thumb {
+  background-color: #00a8ff;
+}
+
+/* Estilo de campos de texto personalizados */
+#custom-settings label,
+#custom-settings input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#custom-settings label {
+  color: #ccc;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#custom-settings input[type="number"] {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#custom-settings input[type="number"]:focus {
+  outline: none;
+  border-color: #00a8ff;
+}
+
+/* Botón personalizado */
+#settings button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #ff5c5c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Botón personalizado de iniciar y reiniciar */
+#settings button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #ff5c5c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+#settings button:hover {
+  background-color: #ff4040;
+}
+
+#reset-button {
+  background-color: #ff7f7f;
+}
+
+#reset-button:hover {
+  background-color: #ff5f5f;
+}
+
+#settings button:hover {
+  background-color: #ff4040;
+}
+
+/* Estilos del tablero de juego */
+.grid {
+  display: grid;
+  gap: 2px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: #666;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.cell.revealed {
+  background-color: #999;
+  cursor: default;
+}
+
+.cell.mine {
+  background-color: red;
+}
+
+.cell.flag {
+  background-color: #444;
+  color: yellow;
+}
+
+.grid.disabled .cell {
+  cursor: not-allowed;
+}
+
+/* Panel de Highscores */
+#scores {
+  margin-top: 20px;
+}
+
+#scores h2 {
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+#highScores {
+  list-style: none;
+  padding: 0;
+}
+
+#highScores li {
+  background-color: #444;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 5px;
+  color: #fff;
+}
