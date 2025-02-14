@@ -303,3 +303,7 @@ const resolveFetch = () => {
 };
 
 resolveFetch().then(animationTimeline());
+
+setTimeout(() => {
+  document.getElementById("download-btn").removeAttribute("hidden");
+}, 67000); // 67 segundos
