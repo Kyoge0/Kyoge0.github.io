@@ -1,0 +1,17 @@
+pwd
+
+node -y
+
+npm create vite@latest
+
+practica03-vite
+
+-> React
+
+-> JavaScript
+
+cd practica03
+
+npm install
+
+npm run dev
