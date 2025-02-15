@@ -1,0 +1,28 @@
+/* SLIDING CARDS */
+
+.scrolling-cards-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+  .scrolling-cards {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollCards 30s linear infinite;
+  }
+  .scrolling-cards:hover {
+    animation-play-state: paused;
+  }
+  .card {
+    min-width: 300px;
+    max-width: 400px;
+  }
+  @keyframes scrollCards {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
